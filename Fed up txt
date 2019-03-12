@@ -1,0 +1,393 @@
+// ReAnn Jacob
+// John O'Leary
+// Eng 121
+// 2/27/19
+//
+//
+// Fed Up 
+// Creative Option
+//
+//
+//
+
+// To do
+//
+// Calc logic
+// Make it look nice
+// Grammar
+// Strings
+// Print out at the end of the day how they did
+// Math at the end over all
+//
+//
+
+#include <iostream>
+#include <ctime>
+#include <math.h>
+#include <stdlib.h>
+
+using namespace std;
+
+int main() {
+
+	srand(time(NULL));
+
+	////////////////////////////////////////////
+	char ic; // Char Input
+	int day = 1; // Controls the Switch
+	///////////////////////////////////////////
+	//////////////////////////////////////////////////////
+	// Calories, Sugar, Sugar Percent, Fat, Fat Percent
+	int cal = 0;
+	int sugar = 0;
+	float sugperM= 0;
+	float sugperW = 0;
+	int fat = 0;
+	int perfat = 0;
+	/////////////////////////////////////////////
+	int hunger = 3;
+
+	/////////////////////////////////////////////
+
+	// This is the intro // Fix this 'dialogue'
+	cout << "You decide to do the science option for the Fed Up project." << endl;
+	cout << "So we're going to record the nutritional facts on everything you eat. " << endl;
+	cout << "Dietary Information taken from the WebMD Food Calculator. " << endl;
+	cout << " " << endl;
+
+	system("pause");
+
+	system("CLS");
+	////////////////////////////////////////
+
+	/////////////////////////////////
+	switch (day) {
+
+	case 1: // Day 1
+		//cout << "Day 1 " << endl;
+
+		/////////////////////////////////////////////////////////////
+
+		// Breakfast
+		/*Breakfast Day 1
+			Orange Juice
+			Pancakes
+			Eggs
+			Pizza Rolls*/
+
+		cout << "This is the beginning of your day." << endl; //  Write better beginning
+		cout << "Do you choose to have breakfast?" << endl;
+		cin >> ic;
+
+		if (ic == 'y' || ic == 'Y') {
+			cout << "What do you choose to eat?" << endl;
+			cout << "A.) Orange Juice B.) Pancakes C.) Eggs D.) Pizza Rolls E.) Nothing" << endl;
+			cin >> ic;
+
+			if (ic == 'a' || ic == 'A') { // Orange Juice
+				// Cal 110   Sugar 24   Sugar %   Fat 0  Fat % 0 
+				cout << "You decided to drink a glass of orange juice." << endl;
+
+				cal += 110;
+				sugar += 24;
+
+			}
+			else if (ic == 'b' || ic == 'B') { // Pancakes
+				// Cal  173  Sugar  0  Sugar %   Fat 7  Fat % 11 
+				cout << "Some flapjacks for you. " << endl;
+
+				cal += 173;
+				fat += 7;
+				perfat += 11;
+
+			}
+			else if (ic == 'c' || ic == 'C') { // Eggs
+				// Cal 180   Sugar  0  Sugar %   Fat  14 Fat %  21
+				cout << " You try to pull a Rocky, but you are afraid of Salmonella, you fry your eggs instead. " << endl;
+
+				cal += 180;
+				fat += 14;
+				perfat += 21;
+
+			}
+			else if (ic == 'd' || ic == 'D') { // Pizza Rolls
+				// Cal  190  Sugar 4   Sugar %   Fat 6  Fat %  9
+				cout << "You chose the breakfast of champions (6 pizza rolls). " << endl;
+
+				cal += 190;
+				sugar += 4;
+				fat += 6;
+				perfat += 9;
+
+			}
+			else { // 
+				cout << "You decided after all that you didn't want to eat." << endl;
+				hunger--;
+			}
+
+		} // Yes
+
+		else if (ic == 'n' || ic == 'N') {
+
+			cout << "Welp there goes the 'most important' meal of the day. " << endl;
+			hunger--;
+
+		} // No
+
+		else {
+
+		}
+
+		cout << " " << endl;
+
+		system("pause");
+
+		system("CLS");
+
+		/////////////////////////////////////////////////
+		//////// Coffee!
+
+		cout << "You are offered a cup of coffee from a coworker" << endl;
+		cout << "Do you take it?" << endl;
+		cin >> ic;
+
+		if (ic == 'y' || ic == 'Y') {
+			// Cal  2  Sugar 2   Sugar %   Fat 0  Fat % 0
+			cout << "You decide to tke the coffee as a mid-day pick-me-up " << endl;
+
+			cal += 2;
+			sugar += 2;
+
+		}
+		else if (ic == 'n' || ic == 'N') {
+			cout << "Your coworker gives your coffee to your boss, and geta a promotion 6 months later. " << endl;
+
+		}
+		else {
+
+		}
+
+		cout << " " << endl;
+
+		system("pause");
+
+		system("CLS");
+		/////////////////////////////////////////////////
+
+		// Lunch
+		/*Lunch Day 1
+			Turkey Sandwhich
+			Hard Boiled Egg
+			Bag of Skittles
+			Cereal*/
+
+		cout << "Your friends are going out for lunch." << endl;
+		cout << "Do you choose to go?" << endl;
+		cin >> ic;
+
+		if (ic == 'y' || ic == 'Y') {
+			cout << "What do you choose to eat?" << endl;
+			cout << "A.) Turkey Sandwhich B.) Hard Boiled Egg C.) Bag of Skittles D.) Cereal" << endl;
+			cin >> ic;
+
+			if (ic == 'a' || ic == 'A') { // Turkey Sandwhich
+				// Cal  280  Sugar 7   Sugar %   Fat 4  Fat % 5 
+				cout << "You eat a  turkey sandwhich. " << endl;
+
+				cal += 280;
+				sugar += 7;
+				fat += 4;
+				perfat += 5;
+
+			}
+			else if (ic == 'b' || ic == 'B') { // Hard Boiled Egg
+				// Cal  155  Sugar  1  Sugar %   Fat  11 Fat % 16 
+				cout << "You make an attempt at being Rocky you are afraid of Salmonella, so you boil your egg. " << endl;
+
+				cal += 155;
+				sugar++;
+				fat += 11;
+				perfat += 16;
+
+			}
+			else if (ic == 'c' || ic == 'C') { // Bag of Skittles
+				// Cal  251  Sugar  47  Sugar %   Fat 3  Fat % 4 
+				cout << "You follow in the footsteps of Maryam and eat a bag of Skittles. " << endl;
+
+				cal += 251;
+				sugar += 47;
+				fat += 3;
+				perfat += 4;
+
+			}
+			else if (ic == 'd' || ic == 'D') { // Cereal
+				// Cal  110  Sugar 12   Sugar %   Fat 31  Fat % 48 
+				cout << "Perfect choice for a late riser that loves Frosted Flakes. " << endl;
+
+				cal += 110;
+				sugar += 12;
+				fat += 31;
+				perfat += 48;
+
+			}
+			else {
+				cout << "You decided to just sit there with your pals while they ate." << endl;
+				hunger--;
+			}
+
+		} // Yes
+
+		else if (ic == 'n' || ic == 'N') {
+
+			cout << "Welp there go your friends." << endl;
+			hunger--;
+
+		} // No
+
+		else {
+			cout << " " << endl;
+		}
+
+		cout << " " << endl;
+
+		system("pause");
+
+		system("CLS");
+		////////////////////////////////////////////////
+
+		// Dinner
+		/*Dinner Day 1
+			Spaghetti
+			Salmon and Vegetables
+			Rice and Chicken
+			Tomato Soup*/
+
+		cout << "Are you going to have dinner?" << endl;
+		cin >> ic;
+
+		if (ic == 'y' || ic == 'Y') {
+
+			cout << "What do you choose to eat?" << endl;
+			cout << "A.) Spaghetti B.) Salmon and Vegetables C.) Rice and Chicken D.) Tomato Soup" << endl;
+			cin >> ic;
+
+			if (ic == 'a' || ic == 'A') { //Spaghetti
+				// Cal  960  Sugar 12   Sugar %   Fat 31  Fat %  48
+				cout << "Knees weak Arms are heavy Mom's Spaghetti " << endl;
+				cout << "On the surface he is calm and ready but he keeps on spaghetting. " << endl;
+				cal += 960;
+				sugar += 12;
+				fat += 31;
+				perfat += 48;
+
+			}
+			else if (ic == 'b' || ic == 'B') { // Salmon and Vegetables
+				// Cal  196  Sugar    Sugar %   Fat 11  Fat % 16 
+				cout << "You choose a healthy option good job. " << endl;
+				cal += 196;
+				fat += 11;
+				perfat += 16;
+
+			}
+			else if (ic == 'c' || ic == 'C') { // Rice and Chicken
+				// Cal  58  Sugar  1  Sugar %   Fat 1  Fat % 2 
+				cout << "Good and delicious good choice. " << endl;
+				cal += 58;
+				sugar++;
+				fat++;
+				perfat += 2;
+
+			}
+			else if (ic == 'd' || ic == 'D') { // Tomato Soup
+				// Cal  91  Sugar  12  Sugar %   Fat 0  Fat % 0 
+				cout << "Childhood favorite surpising how much sugar though. " << endl;
+				cal += 91;
+				sugar += 12;
+
+			}
+			else {
+				cout << "You get distracted and just skip dinner." << endl;
+				hunger--;
+			}
+
+		} // Yes
+
+		else if (ic == 'n' || ic == 'N') {
+
+			cout << "There goes dinner." << endl;
+			hunger--;
+
+		} // No
+
+		else {
+			cout << " " << endl;
+		}
+		cout << " " << endl;
+
+		system("pause");
+
+		system("CLS");
+
+		day = 2;
+
+		break;
+	}
+
+	 // Calculations
+	// Recommeded 25 for Women 38 for Men
+
+
+	//sugperM = 100 * (sugar / 38);
+	//sugperW = 100 * (sugar / 38);
+
+		cout << "Here's how you did today " << endl;
+		cout << cal << " Calories" << endl;
+		cout << sugar << " Grams of Sugar" << endl;
+		cout << fat << " Fat"<< endl;
+		cout << perfat << "% fat"<<  endl;
+
+		cout << "The Daily recommended sugar intake for women is 25 g and 38 g for men." << endl;
+
+		//cout << "You are at " << sugperM << "% if you are a man" << endl;
+		//cout << "You are at " << sugperW << "% if you are a woman" << endl;
+		//cout << hunger << endl;
+
+		if (hunger == 0) {
+			cout << "you didn't eat at all today." << endl;
+		}
+
+
+		cal *= 4;
+		sugar *= 4;
+		fat *= 4;
+		perfat *= 4;
+
+		cout << " " << endl;
+
+		system("pause");
+
+		system("CLS");
+
+		cout << "So, What would that look like over four days?" << endl;
+		cout << " " << endl;
+
+		system("pause");
+
+		system("CLS");
+		cout << "Calculating . . . " << endl;
+		cout << " " << endl;
+
+		system("pause");
+
+		system("CLS");
+
+		//cout << "Something like this. " << endl;
+		cout << cal << " Calories" << endl;
+		cout << sugar << " Grams of Sugar" << endl;
+		cout << fat << " Fat" << endl;
+		cout << perfat << "% fat" << endl;
+
+		//system("pause");
+		
+	
+}
